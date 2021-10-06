@@ -7,7 +7,7 @@ import java.io.*;
 public class TerminalSize {
     
     public void getCols() {
-        String[] cmd = {"/bin/sh", "-c", "tput cols"};
+        String[] cmd = {"/bin/sh", "-c", "stty size < /dev/tty"}; //tput cols
         try {
             Process pr = Runtime.getRuntime().exec(cmd);
             pr.waitFor();
